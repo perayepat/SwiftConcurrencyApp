@@ -14,6 +14,7 @@ struct SectionViewCover: View {
     var body: some View {
         VStack {
             SectionViewTitle(section: section)
+                .accessibilityAddTraits([.isHeader])
             
             Spacer()
             

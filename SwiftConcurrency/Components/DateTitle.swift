@@ -20,7 +20,9 @@ struct DateTitle: View {
             
             Text(title)
                 .font(.largeTitle).bold()
-        }.onAppear{
+        }
+        .accessibilityAddTraits([.isHeader])
+        .onAppear{
             date = Date.now.formatted(.dateTime.weekday().month().day())
         }
         

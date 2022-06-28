@@ -24,6 +24,10 @@ struct ProfileIcon: View {
                 .stroke(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).opacity(0.3), lineWidth: 0.5)
         )
         .frame(width: 44, height: 44)
+        .accessibilityLabel("Sign in")
+        .accessibilityHint("Open sign in modal")
+        .accessibilityAddTraits([.isButton])
+        
     }
 }
 

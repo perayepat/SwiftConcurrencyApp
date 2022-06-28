@@ -23,6 +23,8 @@ struct SectionView: View {
                     presentationMode.wrappedValue.dismiss()
                 }) {
                     CloseButton()
+                        .accessibilityLabel("Back")
+                        .accessibilityHint("Go Back")
                 }
                 Spacer()
             }

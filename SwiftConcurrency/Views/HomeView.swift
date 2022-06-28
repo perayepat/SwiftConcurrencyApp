@@ -53,6 +53,7 @@ struct HomeView: View {
                         .font(.title2)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top,40)
+                        .accessibilityAddTraits([.isHeader])
                     
                     CourseList(courses: courseViewModel.courses)
                         .padding(.top, 20)

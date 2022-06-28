@@ -13,6 +13,7 @@ struct CourseViewCover: View {
     var body: some View {
         VStack {
             CourseViewTitle(course: course)
+                .accessibilityAddTraits([.isHeader])
             
             Spacer()
             ZStack(alignment: .bottom) {
