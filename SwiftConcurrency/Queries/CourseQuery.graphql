@@ -1,16 +1,16 @@
-query Course {
-  courseCollection {
+query Course($locale: String!) {
+  courseCollection(locale: $locale) {
     courses: items {
       sys {
         publishedAt
-                id
+        id
       }
       title
-            subtitle
+      subtitle
       numberOfSections
       numberOfHours
       subject
-            colors
+      colors
       illustration {
         url
       }
@@ -22,6 +22,7 @@ query Course {
           title
           subtitle
           content
+
         }
       }
     }

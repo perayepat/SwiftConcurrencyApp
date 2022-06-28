@@ -8,8 +8,8 @@ public final class CourseQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query Course {
-      courseCollection {
+    query Course($locale: String!) {
+      courseCollection(locale: $locale) {
         __typename
         courses: items {
           __typename
@@ -48,7 +48,14 @@ public final class CourseQuery: GraphQLQuery {
 
   public let operationName: String = "Course"
 
-  public init() {
+  public var locale: String
+
+  public init(locale: String) {
+    self.locale = locale
+  }
+
+  public var variables: GraphQLMap? {
+    return ["locale": locale]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -56,7 +63,7 @@ public final class CourseQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("courseCollection", type: .object(CourseCollection.selections)),
+        GraphQLField("courseCollection", arguments: ["locale": GraphQLVariable("locale")], type: .object(CourseCollection.selections)),
       ]
     }
 
