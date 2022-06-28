@@ -1,0 +1,11 @@
+
+query Section {
+sectionCollection{
+sections: items{
+sys{
+id
+}
+title
+}
+}
+}
