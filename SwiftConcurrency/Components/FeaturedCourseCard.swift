@@ -28,6 +28,7 @@ struct FeaturedCourseCard: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .lineLimit(2)
+                .multilineTextAlignment(.leading)
 
             Text("\(featuredCourse.numberOfSections) sections - \(featuredCourse.numberOfHours) hours")
                 .font(.footnote)
@@ -40,6 +41,7 @@ struct FeaturedCourseCard: View {
                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7)))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .lineLimit(2)
+                .multilineTextAlignment(.leading)
 
         }
         .padding(16)

@@ -49,7 +49,7 @@ struct HomeView: View {
                 .frame(height: 0)
             
             
-        }
+        }.navigationBarHidden(true)
     }
 }
 

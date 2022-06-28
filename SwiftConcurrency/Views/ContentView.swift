@@ -17,12 +17,14 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             TabView{
-                HomeView()
-                    .environmentObject(modalManager) // allows us to access and change it in the home view
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Learn Now")
-                    }
+                NavigationView{
+                    HomeView()
+                        .environmentObject(modalManager) // allows us to access and change it in the home view
+                }
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Learn Now")
+                }
                 NavigationView{
                     SectionsView()
                         ///implement the searchable modifier
@@ -53,7 +55,7 @@ struct ContentView: View {
             if modalManager.showModal{
                 ModalManagerView()
                     .environmentObject(modalManager)// passing the modal manager instance we created in content view
-                    
+                
             }
         }
     }

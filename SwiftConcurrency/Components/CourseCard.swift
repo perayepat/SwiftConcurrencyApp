@@ -30,6 +30,7 @@ struct CourseCard: View {
                 .foregroundColor(.white)
                 .lineLimit(2)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.leading)
 
             Text("\(course.numberOfSections) sections - \(course.numberOfHours) hours")
                 .font(.caption)

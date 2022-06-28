@@ -15,7 +15,9 @@ struct CourseList: View {
             ///Adding a redacted placeholder and using a if statement to switch between the place holder and the actual data
             if courses.count > 0 {
                 ForEach(courses, id: \.id){ course in
-                    CourseCard(course: course)
+                    NavigationLink(destination: CourseView(course: course)) {
+                        CourseCard(course: course)
+                    }
                 }
             } else {
                 ForEach(0..<4, id: \.self) { number in
